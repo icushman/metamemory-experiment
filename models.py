@@ -35,8 +35,8 @@ if is_live:
 
 else:
 	with open('p.dropbox_api_key.txt','r') as dbapifile:
-	for line in dbapifile:
-		DROPBOX_API_KEY = line.rstrip()
+		for line in dbapifile:
+			DROPBOX_API_KEY = line.rstrip()
 
 def db_connect():
 	try:
