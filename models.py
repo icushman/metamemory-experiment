@@ -11,6 +11,7 @@
 
 from __future__ import print_function
 import sys
+import os
 import sqlite3
 import collections
 from flask import Flask, jsonify, render_template, request, g
@@ -27,7 +28,13 @@ app = Flask(__name__)
 
 app.debug = True
 
-with open('p.dropbox_api_key.txt','r') as dbapifile:
+is_live = os.environ.get('IS_HEROKU', None)
+
+if is_live:
+    DROPBOX_API_KEY = os.environ.get('DB_API_KEY')
+
+else:
+	with open('p.dropbox_api_key.txt','r') as dbapifile:
 	for line in dbapifile:
 		DROPBOX_API_KEY = line.rstrip()
 
