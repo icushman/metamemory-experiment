@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+
+
+
+<script type=text/javascript>
+  $(function() {
+    $('a#add-button').bind('click', function() {
+      $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
+        a: $('input[name="a"]').val(),
+        b: $('input[name="b"]').val()
+      }, function(data) {
+        $("#add-result").text(data.result);
+      });
+      return false;
+    });
+  });
+</script>
+
+<script type=text/javascript>
+  $(function() {
+    $('a#mult-button').bind('click', function() {
+      $.getJSON($SCRIPT_ROOT + '/_multiply_numbers', {
+        c: $('input[name="c"]').val(),
+        d: $('input[name="d"]').val()
+      }, function(data) {
+        $("#mult-result").text(data.result);
+      });
+      return false;
+    });
+  });
+</script>
+
+<!-- I JUST DO ONE BUTTON :/ -->
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('#SignIn').on('click', function() {
+        $("#SignIn").text("hello");
+    });
+});
+
+
+</script>
+
+<!--
+<script type=text/javascript>
+
+  
+  $(function() {
+    $('#one-button').on('click', function() {
+      $.getJSON($SCRIPT_ROOT + '/_multiply_numbers', {
+        c: $('input[name="c"]').val(),
+        d: $('input[name="d"]').val()
+      }, function(data) {
+        $('#one-button').text("hello");
+      });
+      return false;
+    });
+  }); 
+</script>
+-->
+
+<script>
+    var nIntervId;
+ 
+    function changeColor() {
+      nIntervId = setInterval(flashText, 1000);
+    }
+ 
+    function flashText() {
+      var oElem = document.getElementById('my_box');
+      oElem.style.color = oElem.style.color == 'red' ? 'blue' : 'red';
+      // oElem.style.color == 'red' ? 'blue' : 'red' is a ternary operator.
+    }
+ 
+    function stopTextColor() {
+      clearInterval(nIntervId);
+    }
+</script>
+
+<script type="text/javascript">
+  var startval = 0
+
+  function timetocycle() {
+    var upcycler = setInterval(tickup, 500)
+  
+  }
+  function tickup() {
+    startval = startval + 2
+    $("#ticker").text(startval);
+
+  }
+
+</script>
+
+
+<!-- run home -->
+
+
+</head>
+
+<body onload="changeColor();">
+
+<button id="SignIn">why</button>
+<span id="texttarget">sometext</span>
+
+<div id="my_box">
+    <p>Hello World</p>
+  </div>
+
+  <button onclick="stopTextColor();">Stop</button>
+
+<h1 id=ticker onclick="timetocycle();">hi</h1>
+
+
+<h1>jQuery Example</h1>
+<p><input type=text size=5 name=a> +
+   <input type=text size=5 name=b> =
+   <span id=add-result>?</span>
+<p><a href=# id=add-button>calculate server side</a>
+
+<h3>multiply</h3>
+<p><input type=text size=5 name=c> +
+   <input type=text size=5 name=d> =
+   <span id=mult-result>?</span>
+<p><a href=# id=mult-button>calculate server side</a>
+
+<div class="tutorial-frame">
+
+  <button id="go-wild"><span id="yolo">take me away</span></button>
+
+</div>
+
+<div id="instruction-panel"></div>
+
+<script src="/static/myscripts.js?25"></script>
+
+<script type="text/javascript">
+//  $(document).ready(function() {
+ //   $('#go-wild').on('click', function() {
+  //      $("#go-wild").text("hello");
+   // });
+//});
+
+</script>
+
+
+</body>
+
+</html>

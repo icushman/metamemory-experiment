@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+
+<script src="/static/javascripts.js"></script>
+
+</head>
+
+<body>
+
+  <div class="wrapper" id="main-div">
+    <div class='setupform'>
+      <form>
+        <div class='entrybox'>
+          <label for="" class='setuplabel'>Researcher Name:</label>
+          <input type="text" name="researcher" id="researcher-field" class='setupinput'>
+        </div>
+
+        <div class='entrybox'>
+        <label for="" class='setuplabel'>Participant ID:</label>
+        <input type="number" name="participant_id" id="participant-field" value="1" class='setupinput'>
+        </div>
+        
+        <div class='minioptions'>
+          <div class='minioption'>
+            <input type="checkbox" name="demomode" id="demonstration" class='setupinput'>
+            <label for="" class='setuplabel'>Run experiment in demo mode.</label>
+          </div>
+        </div>
+        <div class="submit-form-wrapper">
+          <button id='submit-form-button'><a href=# id="start-session-button">SCRIPTS NOT WORKING</a></button>
+        </div>
+      </form>
+    </div>
+     <button id='save-button'><a href=# id='export-to-dropbox'>send records to dropbox</a></button>
+  </div>
+
+
+
+
+
+
+</body>
+
+</html>
