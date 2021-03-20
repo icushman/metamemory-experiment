@@ -6,7 +6,7 @@ Flask==0.12.3
 gunicorn==19.8.0
 idna==2.6
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 MarkupSafe==1.0
 requests==2.20.0
 six==1.11.0
